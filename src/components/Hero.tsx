@@ -142,7 +142,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 text-left transition-all duration-500 px-2 animate-fade-in">
             <div className="flex-1">
               <span className={`text-xs md:text-sm font-mono uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r ${activeNiche.accent} mb-1 block`}>
-                {language === 'pl' ? "Zidentyfikowana Metoda" : "Proven Growth Blueprint"}
+                {language === 'pl' ? "Dla kogo?" : "Who is this for?"}
               </span>
               <p className="text-gray-300 text-sm">{activeNiche.description}</p>
             </div>
