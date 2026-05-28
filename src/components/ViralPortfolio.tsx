@@ -212,14 +212,16 @@ export default function ViralPortfolio() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
               <span className="text-xs font-mono tracking-widest text-sui uppercase font-bold">
-                CLIENT CONVERSIONS
+                            {language === "pl" ? "OPINIE KLIENTÓW" : "CLIENT TESTIMONIALS"}
               </span>
-              <h3 className="text-2xl md:text-4xl font-display font-bold text-white mt-3">
-                Endorsements from premium builders.
+              <h3 className="text-2xl md:text-4xl font-display font-bold text-white mt-3 font-semibold">
+                {language === "pl" ? "Zobacz, co mówią klienci." : "Endorsements from WEB3 Leaders."}
               </h3>
             </div>
             <p className="text-gray-400 font-sans text-sm max-w-md">
-              High-growth SaaS founders, fund administrators, and agency heads rely on our pipeline framework. Here is what they say.
+              {language === "pl"
+                ? "Założyciele rozwijających się startupów, twórcy Web3 oraz marki osobiste budują z nami powtarzalne zasięgi. Oto ich opinie."
+                : "High-growth SaaS founders, fund administrators, and industry leaders rely on our pipeline framework. Here is what they say."}
             </p>
           </div>
 
