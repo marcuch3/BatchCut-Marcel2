@@ -41,13 +41,15 @@ export default function Header({ onContactClick }: HeaderProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo Text */}
-        <a id="nav-logo" href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded bg-gradient-to-tr from-sui to-sui-dark flex items-center justify-center text-black font-semibold tracking-tighter text-sm">
-            MB
-          </div>
-          <span className="font-display font-bold tracking-widest text-lg text-white group-hover:text-sui transition-colors">
-            MARCEL BYTNAR
+        {/* Logo Text & SVG Monogram */}
+        <a id="nav-logo" href="#" className="flex items-center gap-3 group">
+          <img 
+            src="https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779989265/4DA2FF_1_pmoq7i.svg" 
+            alt="Batch Cut" 
+            className="w-7 h-7 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+          <span className="font-display font-bold tracking-[0.15em] text-lg text-white group-hover:text-sui transition-colors">
+            BATCH CUT
           </span>
           <span className="w-1.5 h-1.5 rounded-full bg-sui animate-pulse"></span>
         </a>
@@ -177,4 +179,3 @@ export default function Header({ onContactClick }: HeaderProps) {
     </header>
   );
 }
-
