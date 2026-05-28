@@ -196,7 +196,7 @@ const translations: Record<Language, TranslationDictionary> = {
     navCta: "Kontakt",
 
     heroEyebrow: "—— DYREKTOR KREATYWNY & STRATEG CONTENTU ——",
-    heroHeadlineMain1: "Tworzymy ",
+    heroHeadlineMain1: "Tworzymy zautomatyzowane ",
     heroHeadlineAutomated: "ekosystemy",
     heroHeadlineMain2: "contentowe, które skalują Twoją markę.",
     heroSubheadline: "Od strategii i nagrań, po kompleksowy montaż. Automatyzujemy cały proces, dostarczając Ci gotowe treści, które konwertują widzów w klientów",
