@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Cpu, Mic, Briefcase } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
@@ -10,7 +10,7 @@ interface HeroProps {
 export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
   const { language, t } = useLanguage();
 
-  // Niche variations for interactive personalization (added icons)
+  // Niche variations for interactive personalization (Custom Image URLs)
   const Niches = [
     {
       id: "streamers",
@@ -18,7 +18,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
       metric: t.niche1Metric,
       accent: "from-sui to-blue-400",
       description: t.niche1Desc,
-      icon: Mic,
+      imgUrl: "https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779974311/live-streaming_xtcxvj.png",
     },
     {
       id: "experts",
@@ -26,7 +26,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
       metric: t.niche2Metric,
       accent: "from-blue-500 to-indigo-400",
       description: t.niche2Desc,
-      icon: Briefcase,
+      imgUrl: "https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779974311/recognition_ujstxc.png",
     },
     {
       id: "saas-web3-med",
@@ -34,7 +34,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
       metric: t.niche3Metric,
       accent: "from-cyan-400 to-sui",
       description: t.niche3Desc,
-      icon: Cpu,
+      imgUrl: "https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779974311/saas_1_nptugt.png",
     }
   ];
 
@@ -74,9 +74,9 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
         </span>
       </div>
 
-      {/* Primary Hero Text Container */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
-        {/* Eyebrow text matching screenshot reference */}
+      {/* Primary Hero Text Container (Made Wider for 3 lines) */}
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto text-center flex flex-col items-center">
+        {/* Eyebrow text */}
         <span 
           id="hero-eyebrow" 
           className="text-xs md:text-sm font-semibold tracking-[0.25em] text-sui uppercase font-display mb-4"
@@ -84,15 +84,15 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
           {t.heroEyebrow}
         </span>
 
-        {/* Main Headline - Made smaller to fit 3 lines nicely */}
+        {/* Main Headline - Expanded max-width so it flows into 3 lines */}
         <h1 
           id="hero-headline" 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.1] font-bold tracking-tight text-white font-display mb-6 max-w-4xl"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] font-bold tracking-tight text-white font-display mb-6 w-full max-w-[1100px]"
         >
           {t.heroHeadlineMain1}<span className="font-editorial italic text-sui font-light lowercase tracking-normal drop-shadow-[0_0_20px_rgba(56,152,236,0.6)] px-1 relative">{t.heroHeadlineAutomated}</span>{t.heroHeadlineMain2}
         </h1>
 
-        {/* Subheadline matching request with Space Grotesk font */}
+        {/* Subheadline */}
         <p 
           id="hero-subheadline" 
           className="text-base sm:text-sm md:text-base text-gray-400 font-display max-w-2xl leading-relaxed mb-10 opacity-80"
@@ -100,7 +100,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
           {t.heroSubheadline}
         </p>
 
-        {/* Action Buttons redesigned styled to match the uploaded screenshot */}
+        {/* Action Buttons */}
         <div id="hero-cta-container" className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full mb-16">
           <button
             id="hero-primary-cta"
@@ -121,28 +121,36 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
           </button>
         </div>
 
-        {/* Interactive Industry Toggles - WIDER AND WITH ICONS */}
+        {/* Interactive Industry Toggles - WIDER WITH VERTICAL CUSTOM ICONS */}
         <div id="hero-industry-segment" className="w-full max-w-4xl bg-space-gray/80 border border-space-border/80 backdrop-blur-md rounded-2xl p-6 md:p-8 mb-12">
           <p className="text-xs font-mono uppercase text-gray-500 tracking-wider mb-5">
             {t.nichesHeader}
           </p>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-1.5 bg-black/50 rounded-xl mb-6 border border-space-border/40">
             {Niches.map((niche) => {
-              const IconComponent = niche.icon;
               const isActive = activeNicheId === niche.id;
               
               return (
                 <button
                   key={niche.id}
                   onClick={() => setActiveNicheId(niche.id)}
-                  className={`py-3 px-3 rounded-lg text-xs md:text-sm font-display font-medium transition-all cursor-pointer flex items-center justify-center gap-2.5 truncate ${
+                  className={`py-4 px-3 rounded-xl text-xs md:text-sm font-display font-medium transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-3 ${
                     isActive
-                      ? "bg-space-card text-white border border-space-border shadow-md"
+                      ? "bg-space-card text-white border border-space-border shadow-[0_0_15px_rgba(56,152,236,0.12)]"
                       : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? "text-sui" : "text-gray-500"}`} />
-                  <span className="truncate">{niche.label}</span>
+                  <img 
+                    src={niche.imgUrl} 
+                    alt={niche.label} 
+                    className={`w-10 h-10 object-contain transition-all duration-300 ${
+                      isActive 
+                        ? "opacity-100 drop-shadow-[0_0_8px_rgba(56,152,236,0.6)]" 
+                        : "opacity-40 grayscale-[50%]"
+                    }`}
+                  />
+                  <span className="text-center">{niche.label}</span>
                 </button>
               );
             })}
@@ -180,7 +188,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
         </div>
 
         {/* Quick System Statistics exactly matching screenshot with 3 distinct minimalist columns */}
-        <div id="hero-stats" className="grid grid-cols-3 gap-8 w-full max-w-4xl border-t border-space-border/50 pt-16 mt-8">
+        <div id="hero-stats" className="grid grid-cols-3 gap-8 w-full max-w-4xl border-t border-space-border/50 pt-16 mt-8 mx-auto">
           <div className="flex flex-col items-center justify-center">
             <p className="text-3xl md:text-[2.75rem] font-bold font-display text-white tracking-tight">15M+</p>
             <span className="text-[9px] md:text-[10px] font-mono uppercase tracking-[0.22em] text-gray-500 mt-2 block text-center font-bold">
