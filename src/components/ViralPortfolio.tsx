@@ -109,16 +109,16 @@ export default function ViralPortfolio() {
       id: "reel-editing",
       title: language === "pl" ? "Dynamiczny montaż z wysoką retencją" : "Viral Hook High-Retention Cut",
       category: "ORGANIC REELS",
-      metrics: "350K+ VIEWS",
-      serviceLabel: "REEL EDITING",
-      posterUrl: "https://res.cloudinary.com/dese0tzci/image/upload/v1779907867/3_hxhdbm.png",
-      videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/marek_15sec_1_mfd1bo.mp4",
+      metrics: language === "pl" ? "350 TYS. WYŚWIETLEŃ " : "350K+ VIEWS ACROSS IG & TIKTOK",
+      serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
+      posterUrl: "https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779957075/trump_ok%C5%82adkakaaa_qcnuqz.png",
+      videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/q_auto/f_auto/v1779956795/maxdata_15sec_1_n7b5uw.mp4",
     },
     {
       id: "vip-content-day",
-      title: language === "pl" ? "Dzień zdjęciowy VIP i sesja kreatywna" : "Interactive Creator Deep Work Day",
-      category: "VIP BRANDING",
-      metrics: "10M+ VIEWS",
+      title: language === "pl" ? "Sesja kreatywna" : "VIP Content Day + Deep Work Day",
+      category: "VIP Content Day",
+      metrics: language === "pl" ? "Viralowe rolki do wielokrotnego użycia" : "Viral Reusable Reels",
       serviceLabel: "VIP CONTENT DAY",
       posterUrl: "https://res.cloudinary.com/dese0tzci/image/upload/v1779907867/2_ubuva6.png",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/klein_15sec_1_hmfusx.mp4",
@@ -127,8 +127,8 @@ export default function ViralPortfolio() {
       id: "tech-explainer",
       title: language === "pl" ? "Prezentacja produktu i animacje SaaS" : "PropGate.io Ecosystem Dynamic Explainer",
       category: "WEB3 & SAAS",
-      metrics: "HIGH RETENTION",
-      serviceLabel: "TECH EXPLAINER (SaaS/Web3)",
+      metrics: language === "pl" ? "WYSOKA RETENCJA" : "HIGH RETENTION",
+      serviceLabel: language === "pl" ? "PREZENTACJA PRODUKTU" : "TECH EXPLAINER (SaaS/Web3)",
       posterUrl: "https://res.cloudinary.com/dese0tzci/image/upload/v1779907867/1_azobms.png",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/propgate_15sec_dndj8k.mp4",
     }
@@ -142,29 +142,29 @@ export default function ViralPortfolio() {
       company: "Maxdata.app",
       avatar: "https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779908253/julian_ncrwd8.jpg",
       quote: language === "pl"
-        ? "Marcel to ktoś znacznie więcej niż montażysta – to strateg, który doskonale czuje specyfikę branży krypto. On nie tylko składa wideo w całość, ale projektuje hooki, które realnie zatrzymują uwagę. Niezależnie czy tłumaczymy trudne analizy tradingowe, czy komentujemy najświeższe newsy, Marcel potrafi tak ułożyć narrację, by zamieniać widzów w ciepłe leady. Oddałem mu stery nad moim głównym kanałem, bo wiem, że za każdym razem dowiezie jakość premium."
-        : "Marcel is more than just an editor; he's a strategist who truly understands the crypto niche. He doesn't just cut clips, but designs high-retention hooks that drive real engagement. Whether it's complex trading tutorials or high-impact news, he knows how to frame the content to convert viewers into leads. I trust him with my main channel because he delivers excellence every single time.",
+        ? "Marcel to ktoś więcej niż tylko montażysta. To strateg, który naprawdę rozumie niszę krypto. Marcel wie, jak dobrze ująć treść, by zamienić widzów w leady."
+        : "Marcel is more than just an editor, he's a strategist who truly understands the crypto niche. He knows how to frame the content to convert viewers into leads.",
       stats: "Maxdata.app"
     },
     {
       id: "thecryptoklein",
       name: "TheCryptoKlein",
-      role: language === "pl" ? "Twórca i Inwestor Web3" : "Crypto Influencer & Creator",
+      role: language === "pl" ? "Influencer i Twórca Krypto" : "Crypto Influencer & Creator",
       company: "Crypto Creator",
       avatar: "https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779908277/IMG_8246_hmxp0t.jpg",
       quote: language === "pl"
-        ? "Współpraca z Marcelem przeniosła mój content na zupełnie nowy poziom. To prawdziwy partner strategiczny: stale robimy burze mózgów, a jego wyczucie rynku jest po prostu niesamowite. Wdrożenie jego systemu wygenerowało nam ponad 10 milionów wyświetleń i zbudowało potężną, zaangażowaną społeczność. Jeśli chcesz mocno przeskalować swoją markę w sektorze Web3, jesteś pod właściwym adresem."
-        : "Working with Marcel completely shifted my content game. He acts as a true content strategist: we constantly brainstorm ideas together, and his market insights are insane. Thanks to his framework, we generated over 10 Million views and built a highly loyal audience. If you want to scale your personal brand in Web3, he's the guy.",
-      stats: "10M+ Views"
+        ? "Współpraca z Marcelem przeniosła mój content na zupełnie nowy poziom. Stale robimy burze mózgów, a jego wyczucie rynku jest po prostu niesamowite. Marcel widzi, co działa i potrafi to zaimplementować. W 5 miesięcy wygenerowaliśmy ponad 10 mln wyświetleń i 10000 nowych obserwujących."
+        : "Working with Marcel elevated my content to a whole new level. We're constantly brainstorming, and his intuition for the market is simply incredible. Marcel spots what works and knows exactly how to execute it. In just 5 months, we generated over 10 million views and 10,000 new followers.",
+      stats: language === "pl" ? "10 MILIONÓW WYŚWIETLEŃ" : "10M+ Views"
     },
     {
       id: "propgate",
       name: "PropGate.io",
-      role: language === "pl" ? "Ekosystem SaaS (Prop-Trading)" : "SaaS Prop-Trading Ecosystem",
+      role: language === "pl" ? "Ekosystem SaaS Prop-Trading" : "SaaS Prop-Trading Ecosystem",
       company: "PropGate.io",
       avatar: "https://res.cloudinary.com/dese0tzci/image/upload/q_auto/f_auto/v1779908262/propgate-signet_p1jxto.png",
       quote: language === "pl"
-        ? "Nasz system łączy firmy z branży prop-tradingu z użytkownikami detalicznymi, przez co mechanika samego produktu bywa trudna do wytłumaczenia w krótkim czasie. Marcel zaprojektował dla nas serię explainerów i animacji premium, dzięki którym działanie naszej platformy stało się momentalnie jasne i zrozumiałe dla każdego klienta."
+        ? "Nasze oprogramowanie łączy firmy prop-tradingowe z użytkownikami, co oznacza, że mechanika naszego produktu bywa trudna do wyjaśnienia. Marcel stworzył serię luksusowych animacji i explainer reels, dzięki którym nasza platforma stała się niezwykle prosta do zrozumienia."
         : "Our software connects prop firms and users, meaning our product mechanics can be tough to explain. Marcel created a series of high-end explainer reels that made our platform incredibly easy to understand.",
       stats: "PropGate.io"
     }
@@ -219,16 +219,16 @@ export default function ViralPortfolio() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
               <span className="text-xs font-mono tracking-widest text-sui uppercase font-bold">
-                {language === "pl" ? "OPINIE KLIENTÓW" : "CLIENT CONVERSIONS"}
+                {language === "pl" ? "OPINIE KLIENTÓW" : "CLIENT TESTIMONIALS"}
               </span>
               <h3 className="text-2xl md:text-4xl font-display font-bold text-white mt-3 font-semibold">
-                {language === "pl" ? "Zobacz, co mówią klienci." : "Endorsements from premium builders."}
+                {language === "pl" ? "Zobacz, co mówią klienci." : "Endorsements from WEB3 Leaders."}
               </h3>
             </div>
             <p className="text-gray-400 font-sans text-sm max-w-md">
               {language === "pl"
                 ? "Założyciele rozwijających się startupów, twórcy Web3 oraz marki osobiste budują z nami powtarzalne zasięgi. Oto ich opinie."
-                : "High-growth SaaS founders, fund administrators, and agency heads rely on our pipeline framework. Here is what they say."}
+                : "High-growth SaaS founders, fund administrators, and industry leaders rely on our pipeline framework. Here is what they say."}
             </p>
           </div>
 
