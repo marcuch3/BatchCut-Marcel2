@@ -11,7 +11,6 @@ import InteractiveStudio from "./components/InteractiveStudio";
 import ViralPortfolio from "./components/ViralPortfolio";
 import CaseStudies from "./components/CaseStudies";
 import ROIWidget from "./components/ROIWidget";
-import BentoGrid from "./components/BentoGrid";
 import ProcessBehindScenes from "./components/ProcessBehindScenes";
 import ContactForm from "./components/ContactForm";
 import CTAAndFooter from "./components/CTAAndFooter";
@@ -60,9 +59,6 @@ export default function App() {
 
       {/* High-Ticket Content conversion scale calculator */}
       <ROIWidget />
-
-      {/* Technical Bento philosophical & gear highlights */}
-      <BentoGrid />
 
       {/* Detailed step-by-step methodology timeline & action bts photos */}
       <ProcessBehindScenes />
