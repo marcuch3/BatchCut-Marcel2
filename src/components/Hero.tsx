@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Play, Sparkles, Cpu, Layers, TrendingUp, Mic, Briefcase } from "lucide-react";
+import { ArrowRight, Cpu, Mic, Briefcase } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
@@ -84,10 +84,10 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
           {t.heroEyebrow}
         </span>
 
-        {/* Main Headline with high-contrast editorial font for the word 'automated' - NOW SMALLER */}
+        {/* Main Headline - Made smaller to fit 3 lines nicely */}
         <h1 
           id="hero-headline" 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-tight md:leading-[1.15] font-bold tracking-tight text-white font-display mb-6 max-w-4xl"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.1] font-bold tracking-tight text-white font-display mb-6 max-w-4xl"
         >
           {t.heroHeadlineMain1}<span className="font-editorial italic text-sui font-light lowercase tracking-normal drop-shadow-[0_0_20px_rgba(56,152,236,0.6)] px-1 relative">{t.heroHeadlineAutomated}</span>{t.heroHeadlineMain2}
         </h1>
@@ -95,7 +95,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
         {/* Subheadline matching request with Space Grotesk font */}
         <p 
           id="hero-subheadline" 
-          className="text-base sm:text-sm md:text-sm text-gray-400 font-display max-w-2xl leading-relaxed mb-10 opacity-80"
+          className="text-base sm:text-sm md:text-base text-gray-400 font-display max-w-2xl leading-relaxed mb-10 opacity-80"
         >
           {t.heroSubheadline}
         </p>
@@ -141,7 +141,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
                       : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  <IconComponent className={`w-4 h-4 ${isActive ? "text-sui" : "text-gray-500"}`} />
+                  <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? "text-sui" : "text-gray-500"}`} />
                   <span className="truncate">{niche.label}</span>
                 </button>
               );
