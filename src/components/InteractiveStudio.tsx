@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
 import { Sparkles, Play, Pause, RefreshCw, Layers, CheckCircle, Smartphone, Flame, FileText, Wand2 } from "lucide-react";
 
 export default function InteractiveStudio() {
+  const { language } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(15);
   
@@ -13,36 +15,54 @@ export default function InteractiveStudio() {
   // Hook datasets
   const Hooks = {
     contra: {
-      text: "💥 Stop creating content like 2024 if you want to scale...",
-      kpi: "+94% Retention First 3s",
-      meta: "Contra-momentum hook. Distributes cognitive dissonance.",
+      text: language === "pl" 
+        ? "💥 Przestań tworzyć content jak w 2024, jeśli chcesz skalować..." 
+        : "💥 Stop creating content like 2024 if you want to scale...",
+      kpi: language === "pl" ? "+94% Retencji w 3 sek." : "+94% Retention First 3s",
+      meta: language === "pl" 
+        ? "Hook oparty na kontra-narracji. Buduje dysonans poznawczy." 
+        : "Contra-momentum hook. Distributes cognitive dissonance.",
+      title: language === "pl" ? "Kontra-Narracja" : "Contra-Momentum",
     },
     data: {
-      text: "💀 97% of Agency Owners make this fatal channel mistake...",
-      kpi: "+88% Retention First 3s",
-      meta: "Analytical authority hook. Installs fear-of-missing-out.",
+      text: language === "pl" 
+        ? "💀 97% właścicieli agencji popełnia ten fatalny błąd..." 
+        : "💀 97% of Agency Owners make this fatal channel mistake...",
+      kpi: language === "pl" ? "+88% Retencji w 3 sek." : "+88% Retention First 3s",
+      meta: language === "pl" 
+        ? "Analityczny hook autorytetu. Uruchamia mechanizm FOMO." 
+        : "Analytical authority hook. Installs fear-of-missing-out.",
+      title: language === "pl" ? "Analityczny Szok" : "Analytical Shock",
     },
     system: {
-      text: "⚡ We automated 30 premium short-videos in just 3 hours...",
-      kpi: "+98% Retention First 3s",
-      meta: "Case-study evidence hook. Induces pure curiosity.",
+      text: language === "pl" 
+        ? "⚡ Zautomatyzowaliśmy 30 rolek premium w zaledwie 3 godziny..." 
+        : "⚡ We automated 30 premium short-videos in just 3 hours...",
+      kpi: language === "pl" ? "+98% Retencji w 3 sek." : "+98% Retention First 3s",
+      meta: language === "pl" 
+        ? "Hook oparty na dowodzie (Case-Study). Wzbudza czystą ciekawość." 
+        : "Case-study evidence hook. Induces pure curiosity.",
+      title: language === "pl" ? "Dowód & System" : "Evidence Blueprint",
     }
   };
 
   // Theme datasets  
   const Themes = {
     cyberpunk: {
-      name: "Cyberpunk Blue",
+      name: "Sui Cyberpunk",
+      desc: language === "pl" ? "Elektryczna, niebieska atmosfera" : "Electric blue atmosphere",
       overlay: "bg-radial from-sui/10 via-transparent to-black/80",
       vibe: "#3898EC",
     },
     executive: {
-      name: "Minimalist Executive",
+      name: language === "pl" ? "Monominimalizm" : "Monominimalist",
+      desc: language === "pl" ? "Luksusowy sznyt korporacyjny" : "Rich corporate luxury",
       overlay: "bg-radial from-neutral-800/20 via-transparent to-black/90",
       vibe: "#9CA3AF",
     },
     vandal: {
-      name: "Vandal Editorial",
+      name: "Vandal Edit",
+      desc: language === "pl" ? "Dynamiczny styl streetwearowy" : "Streetwear punch cues",
       overlay: "bg-radial from-[#9333EA]/15 via-transparent to-black/85",
       vibe: "#C084FC",
     }
@@ -52,14 +72,17 @@ export default function InteractiveStudio() {
   const Subtitles = {
     sui: {
       name: "Sui Kinetic Gloss",
+      desc: language === "pl" ? "System świecących konturów" : "Glow outline system",
       textStyle: "text-sui uppercase tracking-tighter text-shadow-[0_0_12px_rgba(56,152,236,0.6)] font-bold",
     },
     hormozi: {
-      name: "Retention Impact",
+      name: language === "pl" ? "Impact Retencyjny" : "Retention Impact",
+      desc: language === "pl" ? "Agresywne podkreślenia" : "In-your-face highlight",
       textStyle: "text-[#FBBF24] font-black uppercase italic tracking-wide font-display",
     },
     luxury: {
-      name: "Silent Luxury",
+      name: language === "pl" ? "Cichy Luksus" : "Silent Luxury",
+      desc: language === "pl" ? "Czysty minimalizm" : "Clean lowercases",
       textStyle: "text-white lowercase tracking-widest font-light italic font-sans",
     }
   };
@@ -86,13 +109,18 @@ export default function InteractiveStudio() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-mono tracking-widest text-sui uppercase bg-sui/10 px-3 py-1 rounded-full inline-block">
-            INTERACTIVE ENGINE
+            {language === "pl" ? "INTERAKTYWNY SILNIK" : "INTERACTIVE ENGINE"}
           </span>
           <h2 className="text-3xl md:text-5xl font-bold font-display text-white mt-4 tracking-tight">
-            See the post-production <span className="text-gradient-blue font-display">machine in action.</span>
+            {language === "pl" ? "Zobacz maszynę postprodukcyjną " : "See the post-production "} 
+            <span className="text-gradient-blue font-display">
+              {language === "pl" ? "w akcji." : "machine in action."}
+            </span>
           </h2>
           <p className="text-gray-400 font-sans mt-4 text-sm md:text-base leading-relaxed">
-            Toggle our specialized post-production components below. Test different hook formats, color presets, and subtitling styles to see how we maximize retention instantly.
+            {language === "pl" 
+              ? "Przetestuj nasze wyspecjalizowane komponenty postprodukcyjne poniżej. Zmieniaj formaty hooków, presety kolorystyczne i style napisów, aby zobaczyć, jak natychmiast maksymalizujemy retencję." 
+              : "Toggle our specialized post-production components below. Test different hook formats, color presets, and subtitling styles to see how we maximize retention instantly."}
           </p>
         </div>
 
@@ -104,7 +132,9 @@ export default function InteractiveStudio() {
             <div id="control-hook" className="bg-space-card/80 border border-space-border rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <FileText className="w-5 h-5 text-sui" />
-                <h3 className="text-base font-bold font-display text-white">1. Select Attention Hook Structure</h3>
+                <h3 className="text-base font-bold font-display text-white">
+                  {language === "pl" ? "1. Wybierz Strukturę Hooka" : "1. Select Attention Hook Structure"}
+                </h3>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -116,7 +146,7 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Contra-Momentum</span>
+                  <span className="text-xs font-bold block mb-1">{Hooks.contra.title}</span>
                   <span className="text-[10px] text-gray-500 block line-clamp-1">{Hooks.contra.kpi}</span>
                 </button>
                 
@@ -128,7 +158,7 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Analytical Shock</span>
+                  <span className="text-xs font-bold block mb-1">{Hooks.data.title}</span>
                   <span className="text-[10px] text-gray-500 block line-clamp-1">{Hooks.data.kpi}</span>
                 </button>
 
@@ -140,7 +170,7 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Evidence Blueprint</span>
+                  <span className="text-xs font-bold block mb-1">{Hooks.system.title}</span>
                   <span className="text-[10px] text-gray-500 block line-clamp-1">{Hooks.system.kpi}</span>
                 </button>
               </div>
@@ -153,7 +183,9 @@ export default function InteractiveStudio() {
             <div id="control-theme" className="bg-space-card/80 border border-space-border rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Wand2 className="w-5 h-5 text-sui" />
-                <h3 className="text-base font-bold font-display text-white">2. Color Preset & Ambient Grading</h3>
+                <h3 className="text-base font-bold font-display text-white">
+                  {language === "pl" ? "2. Preset Kolorystyczny & Grading" : "2. Color Preset & Ambient Grading"}
+                </h3>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -165,8 +197,8 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Sui Cyberpunk</span>
-                  <span className="text-[10px] text-gray-500 block line-clamp-1">Electric blue atmosphere</span>
+                  <span className="text-xs font-bold block mb-1">{Themes.cyberpunk.name}</span>
+                  <span className="text-[10px] text-gray-500 block line-clamp-1">{Themes.cyberpunk.desc}</span>
                 </button>
 
                 <button
@@ -177,8 +209,8 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Monominimalist</span>
-                  <span className="text-[10px] text-gray-500 block line-clamp-1">Rich corporate luxury</span>
+                  <span className="text-xs font-bold block mb-1">{Themes.executive.name}</span>
+                  <span className="text-[10px] text-gray-500 block line-clamp-1">{Themes.executive.desc}</span>
                 </button>
 
                 <button
@@ -189,8 +221,8 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Vandal Edit</span>
-                  <span className="text-[10px] text-gray-500 block line-clamp-1">Streetwear punch cues</span>
+                  <span className="text-xs font-bold block mb-1">{Themes.vandal.name}</span>
+                  <span className="text-[10px] text-gray-500 block line-clamp-1">{Themes.vandal.desc}</span>
                 </button>
               </div>
             </div>
@@ -199,7 +231,9 @@ export default function InteractiveStudio() {
             <div id="control-subtitle" className="bg-space-card/80 border border-space-border rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Layers className="w-5 h-5 text-sui" />
-                <h3 className="text-base font-bold font-display text-white">3. Choose Kinetic Titles Overlay</h3>
+                <h3 className="text-base font-bold font-display text-white">
+                  {language === "pl" ? "3. Wybierz Styl Kinetycznych Napisów" : "3. Choose Kinetic Titles Overlay"}
+                </h3>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -211,8 +245,8 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Sui Kinetic Gloss</span>
-                  <span className="text-[10px] text-gray-500 block line-clamp-1">Glow outline system</span>
+                  <span className="text-xs font-bold block mb-1">{Subtitles.sui.name}</span>
+                  <span className="text-[10px] text-gray-500 block line-clamp-1">{Subtitles.sui.desc}</span>
                 </button>
 
                 <button
@@ -223,8 +257,8 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Retention Impact</span>
-                  <span className="text-[10px] text-gray-500 block line-clamp-1">In-your-face highlight</span>
+                  <span className="text-xs font-bold block mb-1">{Subtitles.hormozi.name}</span>
+                  <span className="text-[10px] text-gray-500 block line-clamp-1">{Subtitles.hormozi.desc}</span>
                 </button>
 
                 <button
@@ -235,8 +269,8 @@ export default function InteractiveStudio() {
                       : "bg-space-black/40 border-space-border/50 text-gray-400 hover:text-white"
                   }`}
                 >
-                  <span className="text-xs font-bold block mb-1">Silent Luxury</span>
-                  <span className="text-[10px] text-gray-500 block line-clamp-1">Clean lowercases</span>
+                  <span className="text-xs font-bold block mb-1">{Subtitles.luxury.name}</span>
+                  <span className="text-[10px] text-gray-500 block line-clamp-1">{Subtitles.luxury.desc}</span>
                 </button>
               </div>
             </div>
@@ -289,7 +323,9 @@ export default function InteractiveStudio() {
 
               {/* Dynamic Kinetic Subtitle Display Container */}
               <div className="absolute inset-x-4 bottom-24 z-20 text-center select-none pointer-events-none p-3 rounded-xl bg-black/40 backdrop-blur-xs border border-white/5 transition-all">
-                <span className="text-[10px] font-mono block text-gray-500 mb-2 uppercase tracking-widest">// AUTO SUBTITLE //</span>
+                <span className="text-[10px] font-mono block text-gray-500 mb-2 uppercase tracking-widest">
+                  {language === "pl" ? "// AUTO NAPISY //" : "// AUTO SUBTITLE //"}
+                </span>
                 <p className={`text-base leading-snug transition-all duration-300 ${activeSub.textStyle}`}>
                   {activeHook.text}
                 </p>
