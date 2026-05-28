@@ -5,14 +5,12 @@
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
 import ChooseGrowthEngine from "./components/ChooseGrowthEngine";
 import InteractiveStudio from "./components/InteractiveStudio";
 import ViralPortfolio from "./components/ViralPortfolio";
 import CaseStudies from "./components/CaseStudies";
 import ROIWidget from "./components/ROIWidget";
 import ProcessBehindScenes from "./components/ProcessBehindScenes";
-import ContactForm from "./components/ContactForm";
 import CTAAndFooter from "./components/CTAAndFooter";
 
 export default function App() {
@@ -42,9 +40,6 @@ export default function App() {
       {/* Center Hero Section with personal branding & KPIs */}
       <Hero onBookCallClick={scrollToContact} onSeeWorkClick={scrollToWorks} />
 
-      {/* Continuous Trusted Marquee infinite scrolling carousel */}
-      <Marquee />
-
       {/* Structured Automation Workflow Steps / Choose Your Growth Engine */}
       <ChooseGrowthEngine onSelectOption={scrollToContact} />
 
@@ -62,9 +57,6 @@ export default function App() {
 
       {/* Detailed step-by-step methodology timeline & action bts photos */}
       <ProcessBehindScenes />
-
-      {/* Dedicated Lead Onboarding manual audit form */}
-      <ContactForm />
 
       {/* Premium CTA & Interactive Calendly booking block with minimalist footer */}
       <CTAAndFooter />
