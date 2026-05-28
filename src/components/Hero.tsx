@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Play, Sparkles, Cpu, Layers, TrendingUp } from "lucide-react";
+import { ArrowRight, Play, Sparkles, Cpu, Layers, TrendingUp, Mic, Briefcase } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
@@ -10,7 +10,7 @@ interface HeroProps {
 export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
   const { language, t } = useLanguage();
 
-  // Niche variations for interactive personalization
+  // Niche variations for interactive personalization (added icons)
   const Niches = [
     {
       id: "streamers",
@@ -18,6 +18,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
       metric: t.niche1Metric,
       accent: "from-sui to-blue-400",
       description: t.niche1Desc,
+      icon: Mic,
     },
     {
       id: "experts",
@@ -25,6 +26,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
       metric: t.niche2Metric,
       accent: "from-blue-500 to-indigo-400",
       description: t.niche2Desc,
+      icon: Briefcase,
     },
     {
       id: "saas-web3-med",
@@ -32,6 +34,7 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
       metric: t.niche3Metric,
       accent: "from-cyan-400 to-sui",
       description: t.niche3Desc,
+      icon: Cpu,
     }
   ];
 
@@ -81,10 +84,10 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
           {t.heroEyebrow}
         </span>
 
-        {/* Main Headline with high-contrast editorial font for the word 'automated' */}
+        {/* Main Headline with high-contrast editorial font for the word 'automated' - NOW SMALLER */}
         <h1 
           id="hero-headline" 
-          className="text-4xl sm:text-5xl md:text-[5.5rem] md:leading-[1.1] font-bold tracking-tight text-white font-display mb-6 max-w-5xl"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-tight md:leading-[1.15] font-bold tracking-tight text-white font-display mb-6 max-w-4xl"
         >
           {t.heroHeadlineMain1}<span className="font-editorial italic text-sui font-light lowercase tracking-normal drop-shadow-[0_0_20px_rgba(56,152,236,0.6)] px-1 relative">{t.heroHeadlineAutomated}</span>{t.heroHeadlineMain2}
         </h1>
@@ -118,39 +121,45 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
           </button>
         </div>
 
-        {/* Interactive Industry Toggles */}
-        <div id="hero-industry-segment" className="w-full max-w-2xl bg-space-gray/80 border border-space-border/80 backdrop-blur-md rounded-2xl p-6 mb-12">
-          <p className="text-xs font-mono uppercase text-gray-500 tracking-wider mb-4">
+        {/* Interactive Industry Toggles - WIDER AND WITH ICONS */}
+        <div id="hero-industry-segment" className="w-full max-w-4xl bg-space-gray/80 border border-space-border/80 backdrop-blur-md rounded-2xl p-6 md:p-8 mb-12">
+          <p className="text-xs font-mono uppercase text-gray-500 tracking-wider mb-5">
             {t.nichesHeader}
           </p>
-          <div className="grid grid-cols-3 gap-2 p-1 bg-black/50 rounded-xl mb-4 border border-space-border/40">
-            {Niches.map((niche) => (
-              <button
-                key={niche.id}
-                onClick={() => setActiveNicheId(niche.id)}
-                className={`py-2 px-1 md:px-3 rounded-lg text-[10px] md:text-xs font-display font-medium transition-all cursor-pointer truncate ${
-                  activeNicheId === niche.id
-                    ? "bg-space-card text-white border border-space-border shadow-md"
-                    : "text-gray-400 hover:text-white"
-                }`}
-              >
-                {niche.label}
-              </button>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-1.5 bg-black/50 rounded-xl mb-6 border border-space-border/40">
+            {Niches.map((niche) => {
+              const IconComponent = niche.icon;
+              const isActive = activeNicheId === niche.id;
+              
+              return (
+                <button
+                  key={niche.id}
+                  onClick={() => setActiveNicheId(niche.id)}
+                  className={`py-3 px-3 rounded-lg text-xs md:text-sm font-display font-medium transition-all cursor-pointer flex items-center justify-center gap-2.5 truncate ${
+                    isActive
+                      ? "bg-space-card text-white border border-space-border shadow-md"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  <IconComponent className={`w-4 h-4 ${isActive ? "text-sui" : "text-gray-500"}`} />
+                  <span className="truncate">{niche.label}</span>
+                </button>
+              );
+            })}
           </div>
           
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 text-left transition-all duration-500 px-2 animate-fade-in">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 text-left transition-all duration-500 px-2 animate-fade-in">
             <div className="flex-1">
-              <span className={`text-xs md:text-sm font-mono uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r ${activeNiche.accent} mb-1 block`}>
+              <span className={`text-xs md:text-sm font-mono uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r ${activeNiche.accent} mb-1.5 block`}>
                 {language === 'pl' ? "Dla kogo?" : "Who is this for?"}
               </span>
-              <p className="text-gray-300 text-sm">{activeNiche.description}</p>
+              <p className="text-gray-300 text-sm leading-relaxed">{activeNiche.description}</p>
             </div>
-            <div className="bg-space-card/80 border border-space-border rounded-xl p-3 md:p-4 text-center md:text-right min-w-[140px] flex flex-col justify-center">
+            <div className="bg-space-card/80 border border-space-border rounded-xl p-4 md:p-5 text-center md:text-right min-w-[160px] flex flex-col justify-center">
               <span className="text-[10px] text-gray-500 uppercase font-mono tracking-wider block">
                 {language === 'pl' ? "Docelowy Silnik" : "TARGET FILTER UNIT"}
               </span>
-              <span className="text-sm font-bold text-sui font-display block mt-0.5">
+              <span className="text-sm md:text-base font-bold text-sui font-display block mt-1">
                 {activeNiche.metric}
               </span>
             </div>
@@ -197,4 +206,3 @@ export default function Hero({ onBookCallClick, onSeeWorkClick }: HeroProps) {
     </section>
   );
 }
-
