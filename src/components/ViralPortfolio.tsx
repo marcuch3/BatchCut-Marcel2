@@ -132,6 +132,43 @@ export default function ViralPortfolio() {
       posterUrl: "https://res.cloudinary.com/dese0tzci/image/upload/v1779907867/1_azobms.png",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/propgate_15sec_dndj8k.mp4",
     }
+
+    {
+      id: "propgate-new",
+      title: language === "pl" ? "Nowy projekt PropGate" : "PropGate New Project",
+      category: "ORGANIC REELS",
+      metrics: language === "pl" ? "ŚWIETNA RETENCJA" : "HIGH RETENTION",
+      serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
+      posterUrl: "TUTAJ_WKLEJ_LINK_DO_OKLADKI.png",
+      videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788275816/propgate_15sec_1_wrwv8m.mp4",
+    },
+    {
+      id: "feeguard",
+      title: language === "pl" ? "Dynamiczny montaż Feeguard" : "Feeguard Dynamic Edit",
+      category: "ORGANIC REELS",
+      metrics: language === "pl" ? "WYSOKA KONWERSJA" : "HIGH CONVERSION",
+      serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
+      
+      videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788275906/feeguard_15sec_1_ffribz.mp4",
+    },
+    {
+      id: "marek-portfolio",
+      title: language === "pl" ? "Marek Snippets" : "Marek Snippets",
+      category: "ORGANIC REELS",
+      metrics: language === "pl" ? "SETKI UDOSTĘPNIEŃ" : "HUNDREDS OF SHARES",
+      serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
+     
+      videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788276421/MAREK_portfolio_tg3skc.mp4",
+    },
+    {
+      id: "jatczak-urywki",
+      title: language === "pl" ? "Snippets" : "Snippets",
+      category: "ORGANIC REELS",
+      metrics: language === "pl" ? "MOCNY HOOK" : "STRONG HOOK",
+      serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
+      
+      videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788276406/jatczakurywki_soyjjk.mp4",
+    }
   ];
 
   const testimonials: TestimonialItem[] = [
