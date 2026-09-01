@@ -104,7 +104,7 @@ function VideoCard({ id, title, metrics, category, posterUrl, videoUrl, hoverTex
 export default function ViralPortfolio() {
   const { language } = useLanguage();
 
-  const videos = [
+const videos = [
     {
       id: "reel-editing",
       title: language === "pl" ? "Dynamiczny montaż z wysoką retencją" : "Viral Hook High-Retention Cut",
@@ -131,15 +131,14 @@ export default function ViralPortfolio() {
       serviceLabel: language === "pl" ? "PREZENTACJA PRODUKTU" : "TECH EXPLAINER (SaaS/Web3)",
       posterUrl: "https://res.cloudinary.com/dese0tzci/image/upload/v1779907867/1_azobms.png",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/propgate_15sec_dndj8k.mp4",
-    }
-
+    },
     {
       id: "propgate-new",
       title: language === "pl" ? "Nowy projekt PropGate" : "PropGate New Project",
       category: "ORGANIC REELS",
       metrics: language === "pl" ? "ŚWIETNA RETENCJA" : "HIGH RETENTION",
       serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
-      posterUrl: "TUTAJ_WKLEJ_LINK_DO_OKLADKI.png",
+      posterUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788275816/propgate_15sec_1_wrwv8m.jpg",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788275816/propgate_15sec_1_wrwv8m.mp4",
     },
     {
@@ -148,7 +147,7 @@ export default function ViralPortfolio() {
       category: "ORGANIC REELS",
       metrics: language === "pl" ? "WYSOKA KONWERSJA" : "HIGH CONVERSION",
       serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
-      
+      posterUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788275906/feeguard_15sec_1_ffribz.jpg",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788275906/feeguard_15sec_1_ffribz.mp4",
     },
     {
@@ -157,7 +156,7 @@ export default function ViralPortfolio() {
       category: "ORGANIC REELS",
       metrics: language === "pl" ? "SETKI UDOSTĘPNIEŃ" : "HUNDREDS OF SHARES",
       serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
-     
+      posterUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788276421/MAREK_portfolio_tg3skc.jpg",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788276421/MAREK_portfolio_tg3skc.mp4",
     },
     {
@@ -166,7 +165,7 @@ export default function ViralPortfolio() {
       category: "ORGANIC REELS",
       metrics: language === "pl" ? "MOCNY HOOK" : "STRONG HOOK",
       serviceLabel: language === "pl" ? "Montaż Rolek" : "REEL EDITING",
-      
+      posterUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788276406/jatczakurywki_soyjjk.jpg",
       videoUrl: "https://res.cloudinary.com/dese0tzci/video/upload/v1788276406/jatczakurywki_soyjjk.mp4",
     }
   ];
